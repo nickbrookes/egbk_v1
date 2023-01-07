@@ -19,8 +19,6 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: true
-secrets:
-  SECRET_KEY:"#emc(e@!%of2r-u7)qz1em0kvi#lau(fl2u0_3b2x$m6o@e!i@"
 jobs:
   # Build job
   build:
