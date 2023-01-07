@@ -15,9 +15,10 @@ import dotenv
 
 from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv())
+from decouple import config , Csv
 
-SECRET_KEY = os.environ['SECRET_KEY']
+
+SECRET_KEY = config('SECRET_KEY')
 
 from pathlib import Path
 
@@ -30,9 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
